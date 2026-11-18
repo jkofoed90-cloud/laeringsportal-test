@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Askia — Dungeon Crawler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere-grain"></div>
+    <div class="atmosphere-vignette"></div>
+  </div>
+  <div class="page">
+  <header class="top">
+    <a class="logo" href="../" aria-label="Askia, forsiden">
+      <svg class="logo-mark" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+  <rect x="2" y="2" width="36" height="36" rx="10" fill="#2EE8C8" stroke="#1C120C" stroke-width="3.2"/>
+  <path d="M12 30 L20 10 L28 30 M14.5 23 h11" fill="none" stroke="#1C120C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      <span class="logo-type">Askia</span>
+    </a>
+    <div class="top-right">
+      <button class="btn btn-ghost" type="button">Log ind</button>
+      <a class="teachers" href="#laerere">For lærere</a>
+    </div>
+  </header>
+
+  <section class="stage">
+    <div class="stage-art"><svg class="scene" viewBox="0 0 1440 700" width="1440" height="700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <radialGradient id="torch" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE08A" stop-opacity="0.72"/>
+      <stop offset="32%" stop-color="#FF8A2A" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="#FF7A3A" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FF5A00" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+    <filter id="runeGlow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- single soft torch glow behind the title, no stacked rings -->
+  <ellipse cx="720" cy="330" rx="460" ry="300" fill="url(#torch)" filter="url(#soft)" opacity="0.95"/>
+  <g transform="translate(260 180) rotate(-14)" opacity="0.3"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="56" fill="#2EE8C8" style="filter:url(#runeGlow)">π</text></g>
+  <g transform="translate(1180 200) rotate(12)" opacity="0.3"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="44" fill="#2EE8C8" style="filter:url(#runeGlow)">x²</text></g>
+  <g transform="translate(240 560) rotate(8)" opacity="0.26"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="48" fill="#2EE8C8" style="filter:url(#runeGlow)">7</text></g>
+  <g transform="translate(1200 540) rotate(-10)" opacity="0.28"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="50" fill="#2EE8C8" style="filter:url(#runeGlow)">√</text></g>
+  <g transform="translate(1320 360) rotate(6)" opacity="0.22"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="36" fill="#2EE8C8" style="filter:url(#runeGlow)">Σ</text></g>
+  <g transform="translate(130 360) rotate(-8)" opacity="0.2"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="34" fill="#2EE8C8" style="filter:url(#runeGlow)">÷</text></g>
+  <g class="motes" opacity="0.85">
+    <circle cx="558.2" cy="180.0" r="1.1" fill="#D9C4B0" opacity="0.26"/>
+    <circle cx="826.0" cy="478.6" r="1.8" fill="#F3EDE4" opacity="0.16"/>
+    <circle cx="1102.4" cy="460.0" r="0.7" fill="#E8C9A0" opacity="0.17"/>
+    <circle cx="1381.9" cy="667.0" r="2.3" fill="#F3EDE4" opacity="0.11"/>
+    <circle cx="203.0" cy="412.0" r="3.0" fill="#E8C9A0" opacity="0.25"/>
+    <circle cx="138.9" cy="264.1" r="3.8" fill="#F3EDE4" opacity="0.11"/>
+    <circle cx="208.3" cy="623.6" r="1.1" fill="#FFC48A" opacity="0.09"/>
+    <circle cx="346.4" cy="46.9" r="1.1" fill="#F3EDE4" opacity="0.17"/>
+    <circle cx="449.9" cy="124.8" r="0.9" fill="#D9C4B0" opacity="0.16"/>
+    <circle cx="1208.9" cy="179.8" r="0.9" fill="#D9C4B0" opacity="0.11"/>
+    <circle cx="1326.2" cy="291.2" r="1.8" fill="#F3EDE4" opacity="0.19"/>
+    <circle cx="931.0" cy="239.2" r="1.1" fill="#F3EDE4" opacity="0.24"/>
+    <circle cx="1019.5" cy="473.3" r="0.9" fill="#E8C9A0" opacity="0.28"/>
+    <circle cx="1257.0" cy="298.6" r="0.9" fill="#D9C4B0" opacity="0.20"/>
+    <circle cx="857.7" cy="94.7" r="1.4" fill="#FFC48A" opacity="0.12"/>
+    <circle cx="1037.5" cy="472.0" r="3.0" fill="#F3EDE4" opacity="0.24"/>
+    <circle cx="1356.0" cy="209.4" r="1.4" fill="#E8C9A0" opacity="0.27"/>
+    <circle cx="416.7" cy="613.3" r="2.3" fill="#D9C4B0" opacity="0.24"/>
+    <circle cx="1111.2" cy="221.6" r="3.8" fill="#E8C9A0" opacity="0.23"/>
+    <circle cx="791.0" cy="169.0" r="1.4" fill="#E8C9A0" opacity="0.12"/>
+    <circle cx="127.5" cy="184.2" r="1.1" fill="#F3EDE4" opacity="0.18"/>
+    <circle cx="350.6" cy="469.5" r="0.9" fill="#D9C4B0" opacity="0.24"/>
+    <circle cx="854.3" cy="493.5" r="3.8" fill="#FFC48A" opacity="0.16"/>
+    <circle cx="1255.5" cy="564.3" r="0.7" fill="#E8C9A0" opacity="0.12"/>
+    <circle cx="908.1" cy="363.4" r="1.1" fill="#F3EDE4" opacity="0.16"/>
+    <circle cx="97.0" cy="463.2" r="2.3" fill="#D9C4B0" opacity="0.12"/>
+    <circle cx="1293.8" cy="619.0" r="1.8" fill="#FFC48A" opacity="0.14"/>
+    <circle cx="1201.3" cy="427.8" r="0.9" fill="#FFC48A" opacity="0.25"/>
+    <circle cx="885.5" cy="300.8" r="3.0" fill="#E8C9A0" opacity="0.24"/>
+    <circle cx="172.7" cy="335.4" r="3.8" fill="#E8C9A0" opacity="0.13"/>
+    <circle cx="1268.8" cy="219.4" r="1.4" fill="#D9C4B0" opacity="0.18"/>
+    <circle cx="113.9" cy="566.7" r="0.7" fill="#E8C9A0" opacity="0.23"/>
+    <circle cx="601.1" cy="354.1" r="2.3" fill="#D9C4B0" opacity="0.20"/>
+    <circle cx="1219.9" cy="174.2" r="3.0" fill="#D9C4B0" opacity="0.11"/>
+    <circle cx="76.8" cy="565.3" r="1.8" fill="#E8C9A0" opacity="0.20"/>
+    <circle cx="564.7" cy="151.0" r="2.3" fill="#E8C9A0" opacity="0.20"/>
+    <circle cx="705.8" cy="399.1" r="0.7" fill="#E8C9A0" opacity="0.12"/>
+    <circle cx="416.2" cy="86.8" r="3.8" fill="#FFC48A" opacity="0.08"/>
+    <circle cx="184.4" cy="282.7" r="0.9" fill="#FFC48A" opacity="0.19"/>
+    <circle cx="950.7" cy="519.1" r="2.3" fill="#E8C9A0" opacity="0.18"/>
+    <circle cx="155.6" cy="270.9" r="2.3" fill="#D9C4B0" opacity="0.11"/>
+    <circle cx="275.3" cy="133.4" r="0.9" fill="#F3EDE4" opacity="0.09"/>
+    <circle cx="469.0" cy="617.0" r="2.3" fill="#F3EDE4" opacity="0.14"/>
+    <circle cx="305.1" cy="616.6" r="0.9" fill="#E8C9A0" opacity="0.26"/>
+    <circle cx="1350.8" cy="209.0" r="1.8" fill="#E8C9A0" opacity="0.15"/>
+    <circle cx="1063.9" cy="597.3" r="3.0" fill="#FFC48A" opacity="0.18"/>
+    <circle cx="950.3" cy="431.0" r="1.8" fill="#E8C9A0" opacity="0.19"/>
+    <circle cx="1269.5" cy="189.9" r="0.7" fill="#F3EDE4" opacity="0.23"/>
+    <circle cx="302.9" cy="462.2" r="1.8" fill="#FFC48A" opacity="0.14"/>
+    <circle cx="408.0" cy="90.1" r="1.8" fill="#FFC48A" opacity="0.28"/>
+    <circle cx="252.3" cy="599.6" r="0.7" fill="#E8C9A0" opacity="0.15"/>
+    <circle cx="548.1" cy="542.3" r="3.8" fill="#E8C9A0" opacity="0.16"/>
+    <circle cx="91.5" cy="161.7" r="1.8" fill="#F3EDE4" opacity="0.20"/>
+    <circle cx="275.4" cy="303.7" r="0.9" fill="#D9C4B0" opacity="0.18"/>
+    <circle cx="1205.8" cy="434.3" r="0.9" fill="#D9C4B0" opacity="0.21"/>
+    <circle cx="933.6" cy="387.6" r="0.9" fill="#F3EDE4" opacity="0.24"/>
+  </g>
+</svg></div>
+    <div class="stage-copy">
+      <p class="kicker"><span class="pill">Kommer snart</span> Matematikspil til 7.–9. klasse</p>
+      <h1>Dungeon <span class="accent-word">Crawler</span></h1>
+      <p class="lead">Rejs gennem katakomberne,<br>løs matematikgåder og besejr bossen.</p>
+      <div class="hero-actions">
+        <button class="btn btn-play" type="button" id="spil-nu" aria-describedby="spil-hint">Spil nu</button>
+      </div>
+      <p class="hero-hint" id="spil-hint">Spillet er på vej og lander her på siden.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="how" id="om-spillet" aria-label="Det kan du i spillet">
+      <ul class="how-list">
+        <li class="how-item">
+          <h2>Udforsk katakomberne</h2>
+          <p>Gå fra rum til rum i et mørkt eventyr, fuld af hemmelige døre.</p>
+        </li>
+        <li class="how-item">
+          <h2>Løs matematikgåder</h2>
+          <p>Tal, mønstre og ligninger er nøglen, der åbner vejen videre.</p>
+        </li>
+        <li class="how-item">
+          <h2>Besejr bossen</h2>
+          <p>Jo længere du kommer, desto sværere bliver gåderne.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot" id="laerere">
+    <div class="foot-main">
+      <p class="foot-brand">Askia <span>· midlertidigt navn</span></p>
+      <p class="foot-copy">Et matematikspil til elever i 7.–9. klasse.</p>
+    </div>
+    <p class="foot-teacher">Er du lærer? <a class="teachers" href="#laerere">Læs mere her</a></p>
+  </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>Dungeon Crawler kommer snart og lander her på siden.</div>
+  
+  <script>
+    (function () {
+      var toast = document.getElementById('toast');
+      var play = document.getElementById('spil-nu');
+      var hint = document.getElementById('spil-hint');
+      var timer;
+      play.addEventListener('click', function () {
+        toast.hidden = false;
+        toast.classList.add('is-on');
+        hint.textContent = 'Dungeon Crawler kommer snart og lander her på siden.';
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          toast.classList.remove('is-on');
+          setTimeout(function () { toast.hidden = true; }, 300);
+        }, 3200);
+      });
+    })();
+  </script>
+
+</body>
+</html>
