@@ -122,20 +122,20 @@ ul { list-style: none; }
 }
 .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-.stage { position: relative; width: 1440px; height: 600px; margin: 0 auto; overflow: hidden; }
+.stage { position: relative; width: 1440px; height: 440px; margin: 0 auto; overflow: hidden; }
 .stage-art { position: absolute; inset: 0; z-index: 0; }
-.stage-art .scene { width: 1440px; height: 600px; }
+.stage-art .scene { width: 1440px; height: 440px; }
 .stage-copy {
   position: absolute;
   z-index: 2;
-  left: 50%; top: 50%; transform: translate(-50%, -42%);
+  left: 50%; top: 96px; transform: translateX(-50%);
   width: 980px;
   text-align: center;
 }
 .hero-logo {
   width: 560px;
   height: auto;
-  margin: 0 auto 18px;
+  margin: 0 auto;
 }
 .kicker {
   display: flex; align-items: center; justify-content: center; gap: 12px;
@@ -190,7 +190,7 @@ ul { list-style: none; }
   border: 0;
 }
 
-.how { width: var(--content); margin: 0 auto; padding: 4px 0 72px; }
+.how { width: var(--content); margin: 0 auto; padding: 8px 0 72px; }
 .how-list {
   display: flex;
   flex-direction: column;
