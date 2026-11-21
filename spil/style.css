@@ -1,4 +1,4 @@
-/* Matquest spilsider. Samme afdæmpede tråd som forsiden: næsten sort, diskrete guldlinjer, logo og hero bærer stilen. Desktop 1440. */
+/* Matquest spilsider. Samme afdæmpede tråd som forsiden: næsten sort, diskrete guldlinjer, logo og hero bærer stilen. Desktop, bred container. */
 :root {
   --void: #0A090C;
   --dust: #121116;
@@ -11,12 +11,13 @@
   --gold-line-strong: rgba(198, 164, 90, 0.45);
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Nunito", "Segoe UI", "Helvetica Neue", sans-serif;
-  --content: 1180px;
+  --content: 1600px;
+  --gutter: 48px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  min-width: 1440px;
+  min-height: 100vh;
   background: var(--void);
   color: var(--text);
   font-family: var(--font-body);
@@ -54,7 +55,14 @@ ul { list-style: none; }
   background: radial-gradient(ellipse 95% 85% at 50% 36%, transparent 62%, rgba(6, 5, 8, 0.55) 100%);
 }
 
-.page { position: relative; z-index: 1; }
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page > main { flex: 1 1 auto; }
 
 .top {
   position: absolute;
@@ -65,8 +73,9 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: var(--content);
-  padding: 22px 0 0;
+  width: 100%;
+  max-width: var(--content);
+  padding: 22px var(--gutter) 0;
 }
 .logo { display: flex; align-items: center; justify-self: start; }
 .logo-img { height: 44px; width: auto; }
@@ -118,10 +127,10 @@ ul { list-style: none; }
   background: var(--gold);
 }
 
-.stage { position: relative; width: 1440px; height: 700px; margin: 0 auto; overflow: hidden; }
-.stage-overview { height: 420px; }
+.stage { position: relative; width: 100%; height: 700px; margin: 0 auto; overflow: hidden; }
+.stage-overview { height: 42vh; min-height: 320px; max-height: 480px; }
 .stage-art { position: absolute; inset: 0; z-index: 0; }
-.stage-art .scene { width: 1440px; height: 100%; }
+.stage-art .scene { width: 100%; height: 100%; max-width: none; }
 .stage-copy {
   position: absolute;
   z-index: 2;
@@ -179,10 +188,10 @@ ul { list-style: none; }
   min-height: 1.4em;
 }
 
-.games { width: var(--content); margin: 0 auto; padding: 8px 0 72px; }
+.games { width: 100%; max-width: var(--content); margin: 0 auto; padding: 8px var(--gutter) 72px; }
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 .game-card {
@@ -234,7 +243,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   border-style: dashed;
 }
 
-.how { width: var(--content); margin: 0 auto; padding: 8px 0 48px; }
+.how { width: 100%; max-width: var(--content); margin: 0 auto; padding: 8px var(--gutter) 48px; }
 .how-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .how-item {
   background: var(--panel);
@@ -253,8 +262,9 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
 .how-item p { color: var(--muted); font-size: 16px; font-weight: 600; line-height: 1.45; }
 
 .back-link {
-  width: var(--content);
+  width: 100%; max-width: var(--content);
   margin: 0 auto 28px;
+  padding: 0 var(--gutter);
   font-size: 15px;
   font-weight: 600;
 }
@@ -262,7 +272,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
 .back-link a:hover { color: var(--gold); }
 
 .foot {
-  width: var(--content); margin: 0 auto; padding: 22px 0 48px;
+  width: 100%; max-width: var(--content); margin: 0 auto; padding: 22px var(--gutter) 48px;
   border-top: 1px solid var(--gold-line);
 }
 .foot-brand { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: 0.02em; }
