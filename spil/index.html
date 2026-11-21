@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matquest — Dungeon Crawler</title>
+  <title>Matquest — Spil</title>
+  <meta name="description" content="Spil på Matquest. Vælg Dungeon Crawler, eller se hvilke spil der er på vej.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -22,14 +23,18 @@
     <a class="logo" href="../" aria-label="Matquest, forsiden">
       <img class="logo-img" src="../assets/matquest-wordmark.png" alt="Matquest" width="200" height="65">
     </a>
+    <nav class="nav" aria-label="Hovedmenu">
+      <a class="ikke-i-brug" aria-disabled="true">Forløb</a>
+      <a class="ikke-i-brug" aria-disabled="true">Materialer</a>
+      <a href="./" aria-current="page">Spil</a>
+    </nav>
     <div class="top-right">
-      <button class="btn btn-ghost" type="button">Log ind</button>
-      <a class="teachers" href="#laerere">For lærere</a>
+      <a class="btn btn-ghost ikke-i-brug" aria-disabled="true">Log ind</a>
     </div>
   </header>
 
-  <section class="stage">
-    <div class="stage-art"><svg class="scene" viewBox="0 0 1440 700" width="1440" height="700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <section class="stage stage-overview">
+    <div class="stage-art"><svg class="scene" viewBox="0 0 1440 420" width="1440" height="420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <defs>
     <radialGradient id="torch" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#E8C56B" stop-opacity="0.45"/>
@@ -45,130 +50,75 @@
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
-  <!-- single soft torch glow behind the title, no stacked rings -->
-  <ellipse cx="720" cy="330" rx="380" ry="240" fill="url(#torch)" filter="url(#soft)" opacity="0.14"/>
-  <g transform="translate(260 180) rotate(-14)" opacity="0.15"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="56" fill="#C6A45A" style="filter:url(#runeGlow)">π</text></g>
-  <g transform="translate(1180 200) rotate(12)" opacity="0.15"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="44" fill="#C6A45A" style="filter:url(#runeGlow)">x²</text></g>
-  <g transform="translate(240 560) rotate(8)" opacity="0.13"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="48" fill="#C6A45A" style="filter:url(#runeGlow)">7</text></g>
-  <g transform="translate(1200 540) rotate(-10)" opacity="0.14"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="50" fill="#C6A45A" style="filter:url(#runeGlow)">√</text></g>
+  <ellipse cx="720" cy="210" rx="380" ry="180" fill="url(#torch)" filter="url(#soft)" opacity="0.14"/>
+  <g transform="translate(260 120) rotate(-14)" opacity="0.15"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="56" fill="#C6A45A" style="filter:url(#runeGlow)">π</text></g>
+  <g transform="translate(1180 140) rotate(12)" opacity="0.15"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="44" fill="#C6A45A" style="filter:url(#runeGlow)">x²</text></g>
+  <g transform="translate(240 340) rotate(8)" opacity="0.13"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="48" fill="#C6A45A" style="filter:url(#runeGlow)">7</text></g>
+  <g transform="translate(1200 330) rotate(-10)" opacity="0.14"><text text-anchor="middle" dominant-baseline="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="50" fill="#C6A45A" style="filter:url(#runeGlow)">√</text></g>
   <g class="motes" opacity="0.85">
-    <circle cx="558.2" cy="180.0" r="1.1" fill="#D9C4B0" opacity="0.13"/>
-    <circle cx="826.0" cy="478.6" r="1.8" fill="#F3EDE4" opacity="0.16"/>
-    <circle cx="1102.4" cy="460.0" r="0.7" fill="#E8C9A0" opacity="0.17"/>
-    <circle cx="1381.9" cy="667.0" r="2.3" fill="#F3EDE4" opacity="0.11"/>
-    <circle cx="203.0" cy="412.0" r="3.0" fill="#E8C9A0" opacity="0.25"/>
-    <circle cx="138.9" cy="264.1" r="3.8" fill="#F3EDE4" opacity="0.11"/>
-    <circle cx="208.3" cy="623.6" r="1.1" fill="#FFC48A" opacity="0.09"/>
+    <circle cx="558.2" cy="80.0" r="1.1" fill="#D9C4B0" opacity="0.13"/>
+    <circle cx="826.0" cy="318.6" r="1.8" fill="#F3EDE4" opacity="0.16"/>
+    <circle cx="1102.4" cy="300.0" r="0.7" fill="#E8C9A0" opacity="0.17"/>
+    <circle cx="203.0" cy="252.0" r="3.0" fill="#E8C9A0" opacity="0.25"/>
+    <circle cx="138.9" cy="164.1" r="3.8" fill="#F3EDE4" opacity="0.11"/>
     <circle cx="346.4" cy="46.9" r="1.1" fill="#F3EDE4" opacity="0.17"/>
-    <circle cx="449.9" cy="124.8" r="0.9" fill="#D9C4B0" opacity="0.16"/>
-    <circle cx="1208.9" cy="179.8" r="0.9" fill="#D9C4B0" opacity="0.11"/>
-    <circle cx="1326.2" cy="291.2" r="1.8" fill="#F3EDE4" opacity="0.19"/>
-    <circle cx="931.0" cy="239.2" r="1.1" fill="#F3EDE4" opacity="0.24"/>
-    <circle cx="1019.5" cy="473.3" r="0.9" fill="#E8C9A0" opacity="0.14"/>
-    <circle cx="1257.0" cy="298.6" r="0.9" fill="#D9C4B0" opacity="0.20"/>
-    <circle cx="857.7" cy="94.7" r="1.4" fill="#FFC48A" opacity="0.12"/>
-    <circle cx="1037.5" cy="472.0" r="3.0" fill="#F3EDE4" opacity="0.24"/>
-    <circle cx="1356.0" cy="209.4" r="1.4" fill="#E8C9A0" opacity="0.27"/>
-    <circle cx="416.7" cy="613.3" r="2.3" fill="#D9C4B0" opacity="0.24"/>
-    <circle cx="1111.2" cy="221.6" r="3.8" fill="#E8C9A0" opacity="0.23"/>
-    <circle cx="791.0" cy="169.0" r="1.4" fill="#E8C9A0" opacity="0.12"/>
-    <circle cx="127.5" cy="184.2" r="1.1" fill="#F3EDE4" opacity="0.18"/>
-    <circle cx="350.6" cy="469.5" r="0.9" fill="#D9C4B0" opacity="0.24"/>
-    <circle cx="854.3" cy="493.5" r="3.8" fill="#FFC48A" opacity="0.16"/>
-    <circle cx="1255.5" cy="564.3" r="0.7" fill="#E8C9A0" opacity="0.12"/>
-    <circle cx="908.1" cy="363.4" r="1.1" fill="#F3EDE4" opacity="0.16"/>
-    <circle cx="97.0" cy="463.2" r="2.3" fill="#D9C4B0" opacity="0.12"/>
-    <circle cx="1293.8" cy="619.0" r="1.8" fill="#FFC48A" opacity="0.14"/>
-    <circle cx="1201.3" cy="427.8" r="0.9" fill="#FFC48A" opacity="0.25"/>
-    <circle cx="885.5" cy="300.8" r="3.0" fill="#E8C9A0" opacity="0.24"/>
-    <circle cx="172.7" cy="335.4" r="3.8" fill="#E8C9A0" opacity="0.13"/>
-    <circle cx="1268.8" cy="219.4" r="1.4" fill="#D9C4B0" opacity="0.18"/>
-    <circle cx="113.9" cy="566.7" r="0.7" fill="#E8C9A0" opacity="0.23"/>
-    <circle cx="601.1" cy="354.1" r="2.3" fill="#D9C4B0" opacity="0.20"/>
-    <circle cx="1219.9" cy="174.2" r="3.0" fill="#D9C4B0" opacity="0.11"/>
-    <circle cx="76.8" cy="565.3" r="1.8" fill="#E8C9A0" opacity="0.20"/>
-    <circle cx="564.7" cy="151.0" r="2.3" fill="#E8C9A0" opacity="0.20"/>
-    <circle cx="705.8" cy="399.1" r="0.7" fill="#E8C9A0" opacity="0.12"/>
-    <circle cx="416.2" cy="86.8" r="3.8" fill="#FFC48A" opacity="0.08"/>
-    <circle cx="184.4" cy="282.7" r="0.9" fill="#FFC48A" opacity="0.19"/>
-    <circle cx="950.7" cy="519.1" r="2.3" fill="#E8C9A0" opacity="0.18"/>
-    <circle cx="155.6" cy="270.9" r="2.3" fill="#D9C4B0" opacity="0.11"/>
-    <circle cx="275.3" cy="133.4" r="0.9" fill="#F3EDE4" opacity="0.09"/>
-    <circle cx="469.0" cy="617.0" r="2.3" fill="#F3EDE4" opacity="0.14"/>
-    <circle cx="305.1" cy="616.6" r="0.9" fill="#E8C9A0" opacity="0.13"/>
-    <circle cx="1350.8" cy="209.0" r="1.8" fill="#E8C9A0" opacity="0.15"/>
-    <circle cx="1063.9" cy="597.3" r="3.0" fill="#FFC48A" opacity="0.18"/>
-    <circle cx="950.3" cy="431.0" r="1.8" fill="#E8C9A0" opacity="0.19"/>
-    <circle cx="1269.5" cy="189.9" r="0.7" fill="#F3EDE4" opacity="0.23"/>
-    <circle cx="302.9" cy="462.2" r="1.8" fill="#FFC48A" opacity="0.14"/>
-    <circle cx="408.0" cy="90.1" r="1.8" fill="#FFC48A" opacity="0.14"/>
-    <circle cx="252.3" cy="599.6" r="0.7" fill="#E8C9A0" opacity="0.15"/>
-    <circle cx="548.1" cy="542.3" r="3.8" fill="#E8C9A0" opacity="0.16"/>
-    <circle cx="91.5" cy="161.7" r="1.8" fill="#F3EDE4" opacity="0.20"/>
-    <circle cx="275.4" cy="303.7" r="0.9" fill="#D9C4B0" opacity="0.18"/>
-    <circle cx="1205.8" cy="434.3" r="0.9" fill="#D9C4B0" opacity="0.21"/>
-    <circle cx="933.6" cy="387.6" r="0.9" fill="#F3EDE4" opacity="0.24"/>
+    <circle cx="1208.9" cy="99.8" r="0.9" fill="#D9C4B0" opacity="0.11"/>
+    <circle cx="931.0" cy="139.2" r="1.1" fill="#F3EDE4" opacity="0.24"/>
+    <circle cx="857.7" cy="74.7" r="1.4" fill="#FFC48A" opacity="0.12"/>
+    <circle cx="416.7" cy="353.3" r="2.3" fill="#D9C4B0" opacity="0.24"/>
+    <circle cx="791.0" cy="109.0" r="1.4" fill="#E8C9A0" opacity="0.12"/>
+    <circle cx="127.5" cy="124.2" r="1.1" fill="#F3EDE4" opacity="0.18"/>
+    <circle cx="854.3" cy="333.5" r="3.8" fill="#FFC48A" opacity="0.16"/>
+    <circle cx="97.0" cy="303.2" r="2.3" fill="#D9C4B0" opacity="0.12"/>
+    <circle cx="885.5" cy="200.8" r="3.0" fill="#E8C9A0" opacity="0.24"/>
+    <circle cx="172.7" cy="235.4" r="3.8" fill="#E8C9A0" opacity="0.13"/>
+    <circle cx="564.7" cy="91.0" r="2.3" fill="#E8C9A0" opacity="0.20"/>
+    <circle cx="416.2" cy="66.8" r="3.8" fill="#FFC48A" opacity="0.08"/>
+    <circle cx="275.3" cy="93.4" r="0.9" fill="#F3EDE4" opacity="0.09"/>
+    <circle cx="1269.5" cy="129.9" r="0.7" fill="#F3EDE4" opacity="0.23"/>
+    <circle cx="91.5" cy="111.7" r="1.8" fill="#F3EDE4" opacity="0.20"/>
   </g>
 </svg></div>
-    <div class="stage-copy">
-      <p class="kicker"><span class="pill">Kommer snart</span> Matematikspil til 7.–9. klasse</p>
-      <h1>Dungeon <span class="accent-word">Crawler</span></h1>
-      <p class="lead">Rejs gennem katakomberne,<br>løs matematikgåder og besejr bossen.</p>
-      <div class="hero-actions">
-        <button class="btn btn-play" type="button" id="spil-nu" aria-describedby="spil-hint">Spil nu</button>
-      </div>
-      <p class="hero-hint" id="spil-hint">Spillet er på vej og lander her på siden.</p>
+    <div class="stage-copy stage-copy-overview">
+      <h1>Vælg et <span class="accent-word">spil</span></h1>
+      <p class="lead">Udforsk matematik gennem spil. Flere titler er på vej.</p>
     </div>
   </section>
 
   <main>
-    <section class="how" id="om-spillet" aria-label="Det kan du i spillet">
-      <ul class="how-list">
-        <li class="how-item">
-          <h2>Udforsk katakomberne</h2>
-          <p>Gå fra rum til rum i et mørkt eventyr, fuld af hemmelige døre.</p>
+    <section class="games" aria-label="Spil på Matquest">
+      <ul class="game-grid">
+        <li>
+          <a class="game-card game-card-featured" href="dungeon-crawler/">
+            <span class="pill">Kommer snart</span>
+            <h2>Dungeon Crawler</h2>
+            <p>Rejs gennem katakomberne og løs matematikgåder.</p>
+          </a>
         </li>
-        <li class="how-item">
-          <h2>Løs matematikgåder</h2>
-          <p>Tal, mønstre og ligninger er nøglen, der åbner vejen videre.</p>
+        <li>
+          <div class="game-card is-placeholder" aria-disabled="true">
+            <span class="pill">På vej</span>
+            <h2>Nyt spil på vej</h2>
+            <p>Et nyt matematikspil lander her.</p>
+          </div>
         </li>
-        <li class="how-item">
-          <h2>Besejr bossen</h2>
-          <p>Jo længere du kommer, desto sværere bliver gåderne.</p>
+        <li>
+          <div class="game-card is-placeholder" aria-disabled="true">
+            <span class="pill">På vej</span>
+            <h2>Nyt spil på vej</h2>
+            <p>Et nyt matematikspil lander her.</p>
+          </div>
         </li>
       </ul>
     </section>
   </main>
 
-  <footer class="foot" id="laerere">
+  <footer class="foot">
     <div class="foot-main">
       <p class="foot-brand">Matquest</p>
-      <p class="foot-copy">Et matematikspil til elever i 7.–9. klasse.</p>
+      <p class="foot-copy">Matematikspil, samlet ét sted.</p>
     </div>
-    <p class="foot-teacher">Er du lærer? <a class="teachers" href="#laerere">Læs mere her</a></p>
   </footer>
   </div>
-  <div class="toast" id="toast" role="status" aria-live="polite" hidden>Dungeon Crawler kommer snart og lander her på siden.</div>
-  
-  <script>
-    (function () {
-      var toast = document.getElementById('toast');
-      var play = document.getElementById('spil-nu');
-      var hint = document.getElementById('spil-hint');
-      var timer;
-      play.addEventListener('click', function () {
-        toast.hidden = false;
-        toast.classList.add('is-on');
-        hint.textContent = 'Dungeon Crawler kommer snart og lander her på siden.';
-        clearTimeout(timer);
-        timer = setTimeout(function () {
-          toast.classList.remove('is-on');
-          setTimeout(function () { toast.hidden = true; }, 300);
-        }, 3200);
-      });
-    })();
-  </script>
-
 </body>
 </html>
