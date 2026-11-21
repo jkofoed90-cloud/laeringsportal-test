@@ -272,11 +272,5 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   .btn, .game-card { transition: none; }
 }
 
-/* Markering: ikke i brug endnu */
-.ikke-i-brug { position: relative; cursor: not-allowed; opacity: .55; }
-.ikke-i-brug::before, .ikke-i-brug::after {
-  content: ""; position: absolute; left: 0; right: 0; top: 50%;
-  border-top: 2px solid #c45a5a; pointer-events: none;
-}
-.ikke-i-brug::before { transform: rotate(var(--x-angle, 12deg)); }
-.ikke-i-brug::after { transform: rotate(calc(var(--x-angle, 12deg) * -1)); }
+/* Markering: ikke i brug endnu — dimmet, uden kryds */
+.ikke-i-brug { cursor: not-allowed; opacity: .62; }
