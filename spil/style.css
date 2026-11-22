@@ -2,13 +2,16 @@
 :root {
   --void: #0A090C;
   --dust: #121116;
-  --panel: #141218;
-  --text: #EDE6D6;
-  --muted: #B4AA98;
-  --gold: #C6A45A;
-  --gold-hover: #D4B56A;
-  --gold-line: rgba(198, 164, 90, 0.28);
-  --gold-line-strong: rgba(198, 164, 90, 0.45);
+  --panel: #1A181F;
+  --panel-hover: #24212B;
+  --text: #F5F0E6;
+  --muted: #D4CBB8;
+  --gold: #D4B46A;
+  --gold-hover: #E0C57A;
+  --gold-line: rgba(212, 180, 106, 0.45);
+  --gold-line-strong: rgba(212, 180, 106, 0.68);
+  --heading-glow: 0 0 18px rgba(212, 180, 106, 0.30);
+  --card-glow: 0 0 28px rgba(212, 180, 106, 0.18), inset 0 1px 0 rgba(240, 220, 160, 0.12);
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Nunito", "Segoe UI", "Helvetica Neue", sans-serif;
   --content: 1600px;
@@ -78,7 +81,7 @@ ul { list-style: none; }
   padding: 22px var(--gutter) 0;
 }
 .logo { display: flex; align-items: center; }
-.logo-img { height: 44px; width: auto; }
+.logo-img { height: 66px; width: auto; }
 .top-right { display: flex; align-items: center; }
 
 .btn {
@@ -109,7 +112,7 @@ ul { list-style: none; }
 }
 .btn-play:hover { background: var(--gold-hover); }
 .btn-play:disabled {
-  opacity: 0.62;
+  opacity: 0.80;
   cursor: not-allowed;
   background: var(--gold);
 }
@@ -148,12 +151,13 @@ ul { list-style: none; }
 }
 .stage-copy h1 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 72px;
   line-height: 1.02;
   letter-spacing: 0.01em;
   margin: 0 0 16px;
   color: var(--text);
+  text-shadow: var(--heading-glow);
 }
 .stage-copy-overview h1 { font-size: 64px; margin-bottom: 12px; }
 .accent-word { display: block; color: var(--gold); }
@@ -189,11 +193,11 @@ ul { list-style: none; }
   min-height: 240px;
   height: 100%;
   background: var(--panel);
-  border: 1px solid var(--gold-line);
+  border: 1px solid var(--gold-line-strong);
   border-radius: 12px;
   padding: 26px 24px 24px;
   overflow: hidden;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 .game-card-featured::before {
   content: "";
@@ -203,7 +207,11 @@ ul { list-style: none; }
   background: radial-gradient(ellipse at 50% 0%, rgba(198, 164, 90, 0.16) 0%, transparent 70%);
   pointer-events: none;
 }
-a.game-card:hover { border-color: var(--gold-line-strong); }
+a.game-card:hover {
+  border-color: var(--gold-hover);
+  background: var(--panel-hover);
+  box-shadow: var(--card-glow);
+}
 a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .game-card .pill { margin-bottom: 18px; }
 .game-card h2 {
@@ -214,6 +222,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   margin: 0 0 10px;
   color: var(--text);
   position: relative;
+  text-shadow: var(--heading-glow);
 }
 .game-card p {
   color: var(--muted);
@@ -224,7 +233,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   position: relative;
 }
 .game-card.is-placeholder {
-  opacity: 0.42;
+  opacity: 0.80;
   pointer-events: none;
   cursor: default;
   border-style: dashed;
@@ -234,17 +243,18 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
 .how-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .how-item {
   background: var(--panel);
-  border: 1px solid var(--gold-line);
+  border: 1px solid var(--gold-line-strong);
   border-radius: 12px;
   padding: 28px 22px 24px;
 }
 .how-item h2 {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 22px;
   letter-spacing: 0.01em;
   margin-bottom: 8px;
   color: var(--text);
+  text-shadow: var(--heading-glow);
 }
 .how-item p { color: var(--muted); font-size: 16px; font-weight: 600; line-height: 1.45; }
 
@@ -262,7 +272,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   width: 100%; max-width: var(--content); margin: 0 auto; padding: 22px var(--gutter) 48px;
   border-top: 1px solid var(--gold-line);
 }
-.foot-brand { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: 0.02em; }
+.foot-brand { font-family: var(--font-display); font-weight: 700; font-size: 24px; letter-spacing: 0.02em; }
 .foot-copy { margin-top: 2px; color: var(--muted); font-size: 15px; font-weight: 600; }
 
 
@@ -287,6 +297,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   letter-spacing: 0.01em;
   color: var(--text);
   margin: 0 0 16px;
+  text-shadow: var(--heading-glow);
 }
 .facts {
   display: grid;
@@ -296,7 +307,7 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
 }
 .facts li {
   background: var(--panel);
-  border: 1px solid var(--gold-line);
+  border: 1px solid var(--gold-line-strong);
   border-radius: 12px;
   padding: 16px 18px;
   color: var(--muted);
@@ -320,16 +331,20 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   flex-direction: column;
   width: 100%;
   padding: 0;
-  border: 1px solid var(--gold-line);
+  border: 1px solid var(--gold-line-strong);
   border-radius: 12px;
   background: var(--panel);
   overflow: hidden;
   cursor: zoom-in;
   text-align: left;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   grid-column: span 2;
 }
-.gallery-item:hover { border-color: var(--gold-line-strong); }
+.gallery-item:hover {
+  border-color: var(--gold-hover);
+  background: var(--panel-hover);
+  box-shadow: var(--card-glow);
+}
 .gallery-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .gallery-item picture, .gallery-item img {
   width: 100%;
@@ -431,7 +446,7 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* Markering: ikke i brug endnu — dimmet, uden kryds */
-.ikke-i-brug { cursor: not-allowed; opacity: .62; }
+.ikke-i-brug { cursor: not-allowed; opacity: .80; }
 
 @media (max-width: 1279px) {
   :root { --gutter: 28px; }
@@ -482,7 +497,7 @@ body.lightbox-open { overflow: hidden; }
 
 @media (max-width: 767px) {
   :root { --gutter: 20px; }
-  .logo-img { height: 36px; }
+  .logo-img { height: 54px; }
   .stage,
   .stage-overview {
     height: auto;
