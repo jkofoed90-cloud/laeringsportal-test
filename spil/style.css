@@ -284,3 +284,94 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
 
 /* Markering: ikke i brug endnu — dimmet, uden kryds */
 .ikke-i-brug { cursor: not-allowed; opacity: .62; }
+
+@media (max-width: 1279px) {
+  :root { --gutter: 28px; }
+  .top {
+    position: relative;
+    left: auto;
+    transform: none;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo login"
+      "nav nav";
+    row-gap: 4px;
+    padding-top: 16px;
+    width: 100%;
+  }
+  .logo { grid-area: logo; }
+  .top-right { grid-area: login; }
+  .nav {
+    grid-area: nav;
+    justify-content: center;
+    gap: 8px 22px;
+    flex-wrap: wrap;
+    padding: 2px 0 8px;
+  }
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 6px;
+  }
+  .btn-ghost {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+  .stage { height: 480px; }
+  .stage-overview { height: 280px; min-height: 240px; max-height: none; }
+  .stage-copy,
+  .stage-copy-overview {
+    width: auto;
+    max-width: 36rem;
+    padding: 0 24px;
+  }
+  .pill { white-space: nowrap; }
+  .kicker { flex-wrap: wrap; }
+  .stage-copy h1 { font-size: 56px; }
+  .stage-copy-overview h1 { font-size: 52px; }
+  .game-grid { grid-template-columns: 1fr; }
+  .game-card { min-height: 180px; }
+  .how-list { grid-template-columns: 1fr; }
+  .back-link a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root { --gutter: 20px; }
+  .logo-img { height: 36px; }
+  .stage,
+  .stage-overview {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+  .stage-copy,
+  .stage-copy-overview {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    padding: 16px 20px 28px;
+  }
+  .kicker {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .stage-copy h1 { font-size: 42px; }
+  .stage-copy-overview h1 { font-size: 40px; }
+  .lead { font-size: 16px; }
+  .btn-play {
+    min-height: 44px;
+    font-size: 17px;
+    min-width: 200px;
+    width: auto;
+    white-space: nowrap;
+  }
+}

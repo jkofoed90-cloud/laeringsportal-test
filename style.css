@@ -238,3 +238,65 @@ ul { list-style: none; }
 /* Markering: ikke i brug endnu — dimmet, uden kryds */
 .ikke-i-brug { cursor: not-allowed; opacity: .62; }
 .how-item.ikke-i-brug:hover { border-color: var(--gold-line); }
+
+@media (max-width: 1279px) {
+  :root { --gutter: 28px; }
+  .top {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo login"
+      "nav nav";
+    row-gap: 4px;
+    padding-top: 16px;
+  }
+  .logo { grid-area: logo; }
+  .top-right { grid-area: login; }
+  .nav {
+    grid-area: nav;
+    justify-content: center;
+    gap: 8px 22px;
+    flex-wrap: wrap;
+    padding: 2px 0 8px;
+  }
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 6px;
+  }
+  .btn-ghost {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+  .hero { padding: 4px var(--gutter) 24px; }
+  .hero-brand { padding: 8px 0 22px; }
+  .hero-logo { width: min(480px, 70vw); }
+  .hero-body {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .hero-aside { display: none; }
+  .pill { white-space: nowrap; }
+  .how-item {
+    min-height: 64px;
+    padding: 14px 16px;
+  }
+  .foot { padding: 18px var(--gutter) 28px; }
+}
+
+@media (max-width: 767px) {
+  :root { --gutter: 20px; }
+  .logo-img { height: 36px; }
+  .hero-logo { width: min(300px, 82vw); }
+  .hero-brand { padding: 2px 0 14px; }
+  .how-item { min-height: 60px; gap: 12px; }
+  .how-title-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    column-gap: 8px;
+  }
+  .how-title-row .pill { margin-left: 0; white-space: nowrap; }
+  .how-item h2 { font-size: 16px; }
+  .foot { padding: 16px var(--gutter) 24px; }
+}
