@@ -265,8 +265,169 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
 .foot-brand { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: 0.02em; }
 .foot-copy { margin-top: 2px; color: var(--muted); font-size: 15px; font-weight: 600; }
 
+
+.about, .gallery-wrap {
+  width: 100%;
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 8px var(--gutter) 48px;
+}
+.pitch {
+  max-width: 42em;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0 0 28px;
+}
+.facts-heading, .gallery-heading {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 1100px;
+}
+.facts li {
+  background: var(--panel);
+  border: 1px solid var(--gold-line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.facts strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+.gallery > li { min-width: 0; }
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--gold-line);
+  border-radius: 12px;
+  background: var(--panel);
+  overflow: hidden;
+  cursor: zoom-in;
+  text-align: left;
+  transition: border-color 0.15s ease;
+  grid-column: span 2;
+}
+.gallery-item:hover { border-color: var(--gold-line-strong); }
+.gallery-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.gallery-item picture, .gallery-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.gallery-caption {
+  display: block;
+  padding: 10px 14px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.gallery > li:nth-child(4) { grid-column: 2 / span 2; }
+.gallery > li:nth-child(5) { grid-column: 4 / span 2; }
+
+body.lightbox-open { overflow: hidden; }
+.lightbox[hidden] { display: none; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 5, 8, 0.86);
+}
+.lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1100px) auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 12px 16px;
+  width: min(1100px, 100%);
+}
+.lightbox-figure {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid var(--gold-line-strong);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.lightbox-image {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  background: #0A090C;
+}
+.lightbox-caption {
+  padding: 10px 16px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+.lightbox-close {
+  position: absolute;
+  top: -8px;
+  right: 52px;
+  z-index: 2;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--gold-line-strong);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.lightbox-close:hover, .lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
+.lightbox-close:focus-visible, .lightbox-nav:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.lightbox-nav {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--gold-line-strong);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  font-size: 28px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-prev { grid-column: 1; grid-row: 1; }
+.lightbox-next { grid-column: 3; grid-row: 1; }
+
 @media (prefers-reduced-motion: reduce) {
-  .btn, .game-card { transition: none; }
+  .btn, .game-card, .gallery-item { transition: none; }
 }
 
 /* Markering: ikke i brug endnu — dimmet, uden kryds */
@@ -300,6 +461,18 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
   .game-grid { grid-template-columns: 1fr; }
   .game-card { min-height: 180px; }
   .how-list { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery > li,
+  .gallery > li:nth-child(4),
+  .gallery > li:nth-child(5) { grid-column: auto; }
+  .lightbox-dialog {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    width: 100%;
+  }
+  .lightbox-close { right: 48px; top: 0; }
   .back-link a {
     display: inline-flex;
     align-items: center;
@@ -341,4 +514,28 @@ a.game-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px;
     width: auto;
     white-space: nowrap;
   }
+  .pitch { font-size: 16px; }
+  .facts li { font-size: 15px; }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .lightbox {
+    padding: 16px 12px;
+  }
+  .lightbox-dialog {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+  }
+  .lightbox-figure { grid-column: 1 / -1; grid-row: 1; }
+  .lightbox-prev { grid-column: 1; grid-row: 2; justify-self: start; }
+  .lightbox-next { grid-column: 2; grid-row: 2; justify-self: end; }
+  .lightbox-close {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: center;
+    min-height: 44px;
+  }
+  .lightbox-image { max-height: calc(100vh - 200px); }
 }

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Matquest — Dungeon Crawler</title>
-  <meta name="description" content="Dungeon Crawler er et matematikspil, hvor du rejser gennem katakomberne og løser matematikgåder.">
+  <meta name="description" content="I Dungeon Crawler går elever i 3. og 4. klasse på opdagelse i en mørk, plyndret landsby og løser matematikopgaver midt i kampen.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -111,10 +111,10 @@
     <circle cx="933.6" cy="387.6" r="0.9" fill="#F3EDE4" opacity="0.24"/>
   </g>
 </svg></div>
-    <div class="stage-copy">
+        <div class="stage-copy">
       <p class="kicker"><span class="pill">Kommer snart</span> Matematikspil</p>
       <h1>Dungeon <span class="accent-word">Crawler</span></h1>
-      <p class="lead">Rejs gennem katakomberne,<br>løs matematikgåder og besejr bossen.</p>
+      <p class="lead">I Dungeon Crawler går elever i 3. og 4. klasse på opdagelse i en mørk, plyndret landsby.</p>
       <div class="hero-actions">
         <button class="btn btn-play" type="button" disabled>Kommer snart</button>
       </div>
@@ -124,19 +124,66 @@
 
   <main>
     <p class="back-link"><a href="../">Tilbage til spil</a></p>
-    <section class="how" id="om-spillet" aria-label="Det kan du i spillet">
-      <ul class="how-list">
-        <li class="how-item">
-          <h2>Udforsk katakomberne</h2>
-          <p>Gå fra rum til rum i et mørkt eventyr, fuld af hemmelige døre.</p>
+
+    <section class="about" id="om-spillet">
+      <p class="pitch">I Dungeon Crawler går elever i 3. og 4. klasse på opdagelse i en mørk, plyndret landsby. De vælger en helt — kriger, ranger eller troldmand — og kæmper sig frem gennem banen. Midt i kampen skal de løse matematikopgaver, og jo bedre de regner, desto stærkere står helten.</p>
+      <h2 class="facts-heading">Hvad eleverne laver</h2>
+      <ul class="facts">
+        <li><strong>Klassetrin:</strong> 3.–4. klasse.</li>
+        <li><strong>Matematik:</strong> Gangetabel, pladsværdi, grupper og gange, del og helhed, talvenner og hop på tallinjen.</li>
+        <li><strong>Kamp og udforskning:</strong> Eleverne vælger vej på banens kort, kæmper mod rotter og rottefolk og møder bossen Rottekongen.</li>
+        <li><strong>Købmanden:</strong> For sjælesten kan de opgradere heltens startudstyr.</li>
+        <li><strong>Færdighedstræ:</strong> Helten bliver stærkere fra bane til bane.</li>
+      </ul>
+    </section>
+
+    <section class="gallery-wrap" id="billeder" aria-label="Billeder fra spillet">
+      <h2 class="gallery-heading">Fra spillet</h2>
+      <ul class="gallery">
+        <li>
+          <button class="gallery-item" type="button" data-full="billeder/01_hovedmenu-1600.webp" data-full-fallback="billeder/01_hovedmenu-1600.jpg" data-caption="Titelskærmen med hovedmenuen">
+            <picture>
+              <source type="image/webp" srcset="billeder/01_hovedmenu-960.webp 960w, billeder/01_hovedmenu-1600.webp 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw">
+              <img src="billeder/01_hovedmenu-960.jpg" srcset="billeder/01_hovedmenu-960.jpg 960w, billeder/01_hovedmenu-1600.jpg 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw" width="1600" height="900" alt="Titelskærm med typografisk titel og hovedmenu" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-caption">Hovedmenu</span>
+          </button>
         </li>
-        <li class="how-item">
-          <h2>Løs matematikgåder</h2>
-          <p>Tal, mønstre og ligninger er nøglen, der åbner vejen videre.</p>
+        <li>
+          <button class="gallery-item" type="button" data-full="billeder/02_klassevalg-1600.webp" data-full-fallback="billeder/02_klassevalg-1600.jpg" data-caption="Valg af helt: Krigeren, Rangeren og Troldmanden">
+            <picture>
+              <source type="image/webp" srcset="billeder/02_klassevalg-960.webp 960w, billeder/02_klassevalg-1600.webp 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw">
+              <img src="billeder/02_klassevalg-960.jpg" srcset="billeder/02_klassevalg-960.jpg 960w, billeder/02_klassevalg-1600.jpg 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw" width="1600" height="900" alt="Valg af helt: Krigeren, Rangeren og Troldmanden" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-caption">Klassevalg</span>
+          </button>
         </li>
-        <li class="how-item">
-          <h2>Besejr bossen</h2>
-          <p>Jo længere du kommer, desto sværere bliver gåderne.</p>
+        <li>
+          <button class="gallery-item" type="button" data-full="billeder/03_koebmanden-1600.webp" data-full-fallback="billeder/03_koebmanden-1600.jpg" data-caption="Købmanden, hvor startudstyr kan opgraderes">
+            <picture>
+              <source type="image/webp" srcset="billeder/03_koebmanden-960.webp 960w, billeder/03_koebmanden-1600.webp 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw">
+              <img src="billeder/03_koebmanden-960.jpg" srcset="billeder/03_koebmanden-960.jpg 960w, billeder/03_koebmanden-1600.jpg 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw" width="1600" height="900" alt="Købmanden, hvor startudstyr kan opgraderes" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-caption">Købmanden</span>
+          </button>
+        </li>
+        <li>
+          <button class="gallery-item" type="button" data-full="billeder/04_banekort-1600.webp" data-full-fallback="billeder/04_banekort-1600.jpg" data-caption="Banen Den plyndrede landsby — kortet, man udforsker">
+            <picture>
+              <source type="image/webp" srcset="billeder/04_banekort-960.webp 960w, billeder/04_banekort-1600.webp 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw">
+              <img src="billeder/04_banekort-960.jpg" srcset="billeder/04_banekort-960.jpg 960w, billeder/04_banekort-1600.jpg 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw" width="1600" height="900" alt="Banen Den plyndrede landsby — kortet, man udforsker" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-caption">Banekort</span>
+          </button>
+        </li>
+        <li>
+          <button class="gallery-item" type="button" data-full="billeder/06_matematik_i_kamp-1600.webp" data-full-fallback="billeder/06_matematik_i_kamp-1600.jpg" data-caption="Kampscene med matematikopgave midt i kampen">
+            <picture>
+              <source type="image/webp" srcset="billeder/06_matematik_i_kamp-960.webp 960w, billeder/06_matematik_i_kamp-1600.webp 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw">
+              <img src="billeder/06_matematik_i_kamp-960.jpg" srcset="billeder/06_matematik_i_kamp-960.jpg 960w, billeder/06_matematik_i_kamp-1600.jpg 1600w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw" width="1600" height="900" alt="Kampscene: matematikopgave midt i kampen, tre grupper med fire" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-caption">Matematik i kamp</span>
+          </button>
         </li>
       </ul>
     </section>
@@ -149,5 +196,19 @@
     </div>
   </footer>
   </div>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Luk billedet">Luk</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Forrige billede">‹</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-image" alt="">
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Næste billede">›</button>
+    </div>
+  </div>
+  <script src="galleri.js" defer></script>
 </body>
 </html>
